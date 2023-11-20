@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HoverLink</title>
+<style>
+
+
+.youtube {
+  display: block;
+  width: 40%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}    
+.youtube:hover{
+opacity: .85;
+border-radius: 75%;
+box-shadow: 0px 0px 10px 10px rgb(92, 0, 0);
+transition: .5s ease;
+
+
+}
+
+
+
+</style>
+</head>
+<body>
+    <a href="https://www.youtube.com/">
+    
+    <img id="evadingImage" src="https://i.pinimg.com/564x/9b/7e/b1/9b7eb1fb9e5e2ac4ac7dba4ea57c585d.jpg" alt="youtubepic" class="youtube">
+      
+    
+
+</a>
+
+<script>
+    const evadingImage = document.getElementById('evadingImage');
+  
+    document.addEventListener('mousemove', (event) => {
+      // Calculate the distance from the center of the image to the mouse cursor
+      const deltaX = event.clientX - (evadingImage.offsetLeft + evadingImage.width / 2);
+      const deltaY = event.clientY - (evadingImage.offsetTop + evadingImage.height / 2);
+  
+      // Use the distance to create a transformation to move the image away from the cursor
+      const transformValue = `translate(${deltaX * 0.1}px, ${deltaY * 0.1}px)`;
+  
+      // Apply the transformation
+      evadingImage.style.transform = transformValue;
+    });
+  </script>
+</body>
+</html>
